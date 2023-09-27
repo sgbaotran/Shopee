@@ -1,0 +1,31 @@
+﻿<!--now we can operate normally-->-
+@model IEnumerable<BrandModel>
+
+<!--brands_products-->
+<!--<h2>Brands</h2>
+<div class="brands-name">
+    <ul class="nav nav-pills nav-stacked">-->
+
+
+        @*@foreach (var item in Model)
+        {a
+            <li><a href=""> <span class="pull-right">(50)</span>@item.Name</a></li>
+
+        }*@
+
+
+
+    <!--</ul>
+</div>-->
+
+
+@foreach(var item in Model)
+{
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        @*This mean go to controller Category and Execute Index() *@
+        <h4 class="panel-title"><a asp-action-"Index" asp-controller="Brand" asp-route-deptraikhong="true" asp-route-Slug="@item.Slug">@item.Name</a></h4>
+    </div>
+</div>
+}

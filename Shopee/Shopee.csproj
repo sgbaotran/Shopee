@@ -1,0 +1,90 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Category\" />
+    <None Remove="Views\Cart\" />
+    <None Remove="Views\Checkout\" />
+    <None Remove="Views\Product\" />
+    <None Remove="Repository\" />
+    <None Remove="Migrations\" />
+    <None Remove="Repository\Components\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\Categories\" />
+    <None Remove="Views\Brand\" />
+    <None Remove="Views\Shared\Components\Brands\" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\Admin\" />
+    <None Remove="Areas\Admin\Controllers\" />
+    <None Remove="Areas\Admin\Views\" />
+    <None Remove="Areas\Admin\Views\Product\" />
+    <None Remove="Areas\Admin\Views\Shared\" />
+    <None Remove="Areas\Admin\Models\" />
+    <None Remove="Repository\Validation\" />
+    <None Remove="Areas\Admin\Views\Category\" />
+    <None Remove="Areas\Admin\Views\Brand\" />
+    <None Remove="Views\Account\" />
+    <None Remove="Models\ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Category\" />
+    <Folder Include="Views\Cart\" />
+    <Folder Include="Views\Checkout\" />
+    <Folder Include="Views\Product\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Repository\Components\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\Categories\" />
+    <Folder Include="Views\Brand\" />
+    <Folder Include="Views\Shared\Components\Brands\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Admin\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Admin\Views\Product\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Repository\Validation\" />
+    <Folder Include="wwwroot\images\products\" />
+    <Folder Include="Areas\Admin\Views\Category\" />
+    <Folder Include="Areas\Admin\Views\Brand\" />
+    <Folder Include="wwwroot\backend\" />
+    <Folder Include="wwwroot\backend\css\" />
+    <Folder Include="wwwroot\backend\js\" />
+    <Folder Include="wwwroot\backend\images\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Models\ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.22">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.22">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.22" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\images\products\" />
+    <Content Remove="wwwroot\backend\" />
+    <Content Remove="wwwroot\backend\css\" />
+    <Content Remove="wwwroot\backend\js\" />
+    <Content Remove="wwwroot\backend\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\Shared\_FooterPartial.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

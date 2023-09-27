@@ -1,0 +1,30 @@
+﻿<!--now we can operate normally-->
+@model IEnumerable<BrandModel>
+<!--brands_products-->
+<!--<h2>Brands</h2>
+<div class="brands-name">
+    <ul class="nav nav-pills nav-stacked">-->
+@*@foreach (var item in Model)
+    {a
+        <li><a href=""> <span class="pull-right">(50)</span>@item.Name</a></li>
+
+    }*@
+
+
+
+<!--</ul>
+</div>-->
+
+
+@foreach (var item in Model)
+{
+    <div class="panel @((item.Slug.ToLower() .Equals( TempData["slug"])) ? "panel-default" : "")">
+        <div class="panel-heading">
+            <a asp-action="Index" asp-controller="Brand" asp-route-deptraikhong="true" asp-route-Slug="@item.Slug">
+                <h4 class="panel-title">
+                    @item.Name
+                </h4>
+            </a>
+        </div>
+    </div>
+}

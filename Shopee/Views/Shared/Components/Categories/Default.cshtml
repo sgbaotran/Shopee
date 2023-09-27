@@ -1,0 +1,15 @@
+﻿@model IEnumerable<CategoryModel>
+
+@foreach (var item in Model)
+{
+    <div class="panel @((item.Slug.ToLower().Equals(TempData["slug"])) ? "panel-default" : "") ">
+        <div class="panel-heading">
+            @*This mean go to controller Category and Execute Index() *@
+            <a asp-action-"Index" asp-controller="Category" asp-route-Slug="@item.Slug">
+                <h4 class="panel-title">
+                @item.Name
+                </h4>
+            </a>
+        </div>
+    </div>
+}

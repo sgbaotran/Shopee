@@ -1,0 +1,80 @@
+﻿
+
+<section id="cart_items">
+
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Shopping Cart</li>
+            </ol>
+        </div>
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Item</td>
+                        <td class="description"></td>
+                        <td class="price">Price</td>
+                        <td class="quantity">Quantity</td>
+                        <td class="total">Total</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model.CartItems.Count > 0)
+                    {
+                        foreach (var product in Model.CartItems)
+                        {
+                            <tr>
+                                <td class="cart_product">
+                                    <a href=""><img width="120px" src="~/images/products/@product.Image" alt="image"></a>
+                                </td>
+                                <td class="cart_description">
+                                    @*<h4><a href="">Dizznut</a></h4>*@
+                                    <h4><a href="">@product.ProductName</a></h4>
+                                    <p>Web ID: @product.ProductId</p>
+                                </td>
+                                <td class="cart_price">
+                                    <p>$@product.Price</p>
+                                </td>
+                                <td>
+
+                                    <a class="btn btn-success  btn-sm" asp-controller="Cart" asp-action="Add" asp-route-id="@product.ProductId"> + </a>
+                                    <input disabled class="cart_quantity_input" type="text" name="quantity" value="@product.Quantity" autocomplete="off" size="2">
+                                    <a class="btn btn-danger  btn-sm" asp-controller="Cart" asp-action="Decrease" asp-route-id="@product.ProductId"> - </a>
+                                    <a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="Remove" asp-route-id="@product.ProductId"> Remove </a>
+
+                                </td>
+                                <td class="cart_total">
+                                    <p class="cart_total_price">$@product.Total</p>
+                                </td>
+
+                            </tr>
+
+
+                        }
+                        <tr >
+                            <td >
+                                Grand Total: @Model.GrandTotal.ToString()
+                            </td>
+                            <td >
+                                <a asp-controller="Cart" asp-action ="Clear"class="btn btn-danger btn-sm">
+                                Clear Cart
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5">Your Cart Is Empty!</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section> <!--/#cart_items-->

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ProductModel>
+
+@{
+
+    ViewData["title"] = "Product Listed";
+}
+<a asp-area="admin" asp-controller="Product" asp-action="Create"><div class="p-2"><h3>Create product</h3></div></a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Product</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Category</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var product in Model)
+        {
+            <tr>
+                <th scope="row">@product.Id</th>
+                <td><img width="120 " src="~/images/products/@product.Image" /></td>
+                <td>@product.Name</td>
+                <td>@product.Brand.Name</td>
+                <td>@product.Category.Name</td>
+                <td>@product.Price</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Product" asp-route-Id="@product.Id" class="btn btn-sm btn-success">Edit</a>
+                    <a asp-action="Delete" asp-controller="Product" asp-route-Id="@product.Id" class="btn btn-sm btn-warning confirmDeletion">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
