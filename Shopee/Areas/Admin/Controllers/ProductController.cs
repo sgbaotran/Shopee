@@ -62,6 +62,7 @@ namespace Shopee.Areas.Admin.Controllers
             ViewBag.Categories = new SelectList(_dataContext.Categories, "Id", "Name");
             ViewBag.Brands = new SelectList(_dataContext.Brands, "Id", "Name");
             //return Redirect(Request.Headers["Referer"].ToString());
+
             return View();
         }
 
