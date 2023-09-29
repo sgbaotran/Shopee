@@ -8,7 +8,9 @@ namespace Shopee.Repository
     {
         public static void SeedingData(DataContext _context)
         {
-            _context.Database.Migrate();
+           
+            //_context.Database.Migrate();
+
 
             if (!_context.Products.Any())
             {

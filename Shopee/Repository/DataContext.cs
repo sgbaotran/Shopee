@@ -1,4 +1,4 @@
-﻿ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shopee.Models;
 
@@ -17,6 +17,16 @@ namespace Shopee.Repository
 
         public DbSet<CategoryModel> Categories { get; set; }
 
+        public DbSet<OrderModel> Orders { get; set; }
+
+        public DbSet<OrderDetails> OrderDetails { get; set; }
+
+        internal object FindFirstValue(object email)
+        {
+            throw new NotImplementedException();
+        }
     }
+    
+
 }
 

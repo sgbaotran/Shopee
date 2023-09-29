@@ -135,29 +135,29 @@ namespace Shopee.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 product.Slug = product.Name.Replace(" ", "_");
-                var Slug = await _dataContext.Products.FirstOrDefaultAsync(p => p.Slug == product.Slug);
+                //var Slug = await _dataContext.Products.FirstOrDefaultAsync(p => p.Slug == product.Slug);
 
-                if (Slug != null)
+                //if (Slug != null)
+                //{
+                //    ModelState.AddModelError("", "Already exists");
+                //    return View(product);
+                //}
+
+                //else
+                //{
+                if (product.ImageUpload != null)
                 {
-                    ModelState.AddModelError("", "Already exists");
-                    return View(product);
+                    string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "images", "products");
+                    string imageName = Guid.NewGuid().ToString() + "_" + product.ImageUpload.FileName;
+                    string finalPath = Path.Combine(uploadDir, imageName);
+
+
+                    FileStream fs = new FileStream(finalPath, FileMode.Create);
+                    await product.ImageUpload.CopyToAsync(fs);
+                    fs.Close();
+                    product.Image = imageName;
                 }
-
-                else
-                {
-                    if (product.ImageUpload != null)
-                    {
-                        string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "images", "products");
-                        string imageName = Guid.NewGuid().ToString() + "_" + product.ImageUpload.FileName;
-                        string finalPath = Path.Combine(uploadDir, imageName);
-
-
-                        FileStream fs = new FileStream(finalPath, FileMode.Create);
-                        await product.ImageUpload.CopyToAsync(fs);
-                        fs.Close();
-                        product.Image = imageName;
-                    }
-                }
+                //}
 
                 _dataContext.Update(product);
                 _dataContext.SaveChanges();
@@ -181,7 +181,8 @@ namespace Shopee.Areas.Admin.Controllers
             }
         }
 
-        public IActionResult Delete(int Id) {
+        public IActionResult Delete(int Id)
+        {
             ProductModel product = _dataContext.Products.Find(Id);
             if (product != null)
             {
@@ -189,9 +190,10 @@ namespace Shopee.Areas.Admin.Controllers
                 _dataContext.SaveChanges();
                 TempData["successs"] = "Product deleted successfully";
             }
-            else {
+            else
+            {
                 TempData["error"] = "Product does not exist";
-                    }
+            }
             return RedirectToAction("Index");
         }
     }

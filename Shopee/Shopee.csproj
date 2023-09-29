@@ -12,7 +12,6 @@
     <None Remove="Views\Checkout\" />
     <None Remove="Views\Product\" />
     <None Remove="Repository\" />
-    <None Remove="Migrations\" />
     <None Remove="Repository\Components\" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Categories\" />
@@ -30,6 +29,7 @@
     <None Remove="Areas\Admin\Views\Brand\" />
     <None Remove="Views\Account\" />
     <None Remove="Models\ViewModels\" />
+    <None Remove="Areas\Admin\Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Category\" />
@@ -37,7 +37,6 @@
     <Folder Include="Views\Checkout\" />
     <Folder Include="Views\Product\" />
     <Folder Include="Repository\" />
-    <Folder Include="Migrations\" />
     <Folder Include="Repository\Components\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Categories\" />
@@ -60,6 +59,7 @@
     <Folder Include="wwwroot\backend\images\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Models\ViewModels\" />
+    <Folder Include="Areas\Admin\Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.22" />

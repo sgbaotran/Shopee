@@ -4,7 +4,7 @@
 
 namespace Shopee.Migrations
 {
-    public partial class initial : Migration
+    public partial class initials_6 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

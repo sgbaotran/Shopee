@@ -55,15 +55,24 @@
 
 
                         }
-                        <tr >
-                            <td >
+                        <tr>
+                            <td>
                                 Grand Total: @Model.GrandTotal.ToString()
                             </td>
-                            <td >
-                                <a asp-controller="Cart" asp-action ="Clear"class="btn btn-danger btn-sm">
-                                Clear Cart
+                            <td>
+                                <a asp-controller="Cart" asp-action="Clear" class="btn btn-danger btn-sm">
+                                    Clear Cart
                                 </a>
                             </td>
+
+                            <td>
+                                <a asp-controller="Checkout" asp-action="Index" class="btn btn-success btn-sm">
+                                    Checkout
+                                </a>
+                            </td>
+
+
+
                         </tr>
                     }
                     else
